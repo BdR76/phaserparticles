@@ -9,7 +9,7 @@ For more info see:
 http://phaser.io/  
 http://www.html5gamedevs.com/forum/14-phaser/
 
-Also posted this on html5gamedevs forum:
-http://www.html5gamedevs.com/topic/8302-stuck-on-learning-phaser-beginner-question/
+Also posted this on html5gamedevs forum:  
+http://www.html5gamedevs.com/topic/8305-emitter-burst-of-particles-in-form-of-a-circle/
 
 questions, comments: bdr1976@gmail.com
