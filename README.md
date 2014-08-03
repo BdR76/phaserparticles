@@ -2,8 +2,8 @@ Phaser Particles
 ================
 This is a html5/javascript particles test using the Phaser framework.
 
-The goal is to create a burst of particles in the form of a circle,
-by setting x and y speeds of indivual particles.
+The goal is to burst of particles in form of a circle,
+by manipulating the x and y speeds of indivual particles.
 
 For more info see:  
 http://phaser.io/  
