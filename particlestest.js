@@ -11,7 +11,7 @@ function preload() {
 
 function create() {
 
-	//game.physics.startSystem(Phaser.Physics.ARCADE);
+	game.physics.startSystem(Phaser.Physics.ARCADE);
 
 	game.stage.backgroundColor = 0x337799;
 
@@ -19,12 +19,13 @@ function create() {
 	emitter = game.add.emitter(0, 0, 200); // pool of max. 200
 
 	// set emitter properties
-	emitter.makeParticles('particles', [0,1,2,3,4,5], 200, true, true);
+	emitter.makeParticles('particles', [0,1,2,3,4,5], 200, false, false);
 	emitter.gravity = 0; // no gravity
 
 	// fixed rotation
     emitter.minRotation = 720; 
     emitter.maxRotation = emitter.minRotation;
+	emitter.setScale(1, 0.1, 1, 0.1, 3200, Phaser.Easing.None);
 
 	game.input.onDown.add(particleBurst_circle, this);
 }
@@ -64,15 +65,9 @@ function particleBurst_circle(pointer) {
 		// set fixed y speed
 		var ysp = Math.sin(2 * Math.PI * i / 360.0) * EXPLODE_DIAMETER;
 		emitter.setYSpeed(ysp, ysp);
-
-		// TODO: how to emit one single particle?
 		
-		// next line doesn't work, only emits one(?) moving particle
-		//emitter.start(true, 1000, null, 1);
-		//emitter.update();
-
-		// next line add particles, but not moving
-		var star = emitter.create(pointer.x+xsp, pointer.y+ysp, 'particles', null, true);
-		star.frame = (i % 4);
+		// next emits one moving particle, important to also call .update()
+		emitter.start(true, 1000, null, 1);
+		emitter.update();
 	}
 }
